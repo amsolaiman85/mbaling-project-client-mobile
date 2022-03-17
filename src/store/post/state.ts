@@ -1,11 +1,9 @@
 export interface PostInterface {
   id: string;
   date: number;
-  name: {
-    firstname: string;
-    middlename: string;
-    lastname: string;
-  };
+  firstname: string;
+  middlename: string;
+  lastname: string;
   prfphoto: string;
   housingName: string;
   title: string;
@@ -32,11 +30,9 @@ function state(): PostStateInterface {
       {
         id: "zinboarding1631096539262",
         date: 1631096539262,
-        name: {
-          firstname: "Azshara",
-          middlename: "Queldorei",
-          lastname: "Highborne",
-        },
+        firstname: "Azshara",
+        middlename: "Queldorei",
+        lastname: "Highborne",
         prfphoto: "https://cdn.quasar.dev/img/avatar2.jpg",
         housingName: "Zin-Azshari Boarding House",
         title:
@@ -77,11 +73,9 @@ function state(): PostStateInterface {
       {
         id: "pirateking_home3499526422061",
         date: 1632388510672,
-        name: {
-          firstname: "Monkey",
-          middlename: "Dante",
-          lastname: "Luffy",
-        },
+        firstname: "Monkey",
+        middlename: "Dante",
+        lastname: "Luffy",
         prfphoto: "https://cdn.quasar.dev/img/avatar4.jpg",
         housingName: "Pirate King Apartment",
         title:
@@ -100,10 +94,6 @@ function state(): PostStateInterface {
           {
             id: 2,
             url: "https://cdn.quasar.dev/img/mountains.jpg",
-          },
-          {
-            id: 3,
-            url: "https://cdn.quasar.dev/img/quasar.jpg",
           },
         ],
         likes: 32,

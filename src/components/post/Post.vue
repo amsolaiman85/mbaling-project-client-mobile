@@ -75,13 +75,10 @@
             $route.fullPath.includes('/home') ||
             $route.fullPath.includes('/account')
           "
+          class="text-bold cursor-pointer"
+          style="font-size: x-small; text-align: right"
         >
-          <span
-            class="text-bold cursor-pointer"
-            style="font-size: x-small; text-align: right"
-          >
-            +View more
-          </span>
+          <span> +View more </span>
         </div>
       </q-item-section>
 

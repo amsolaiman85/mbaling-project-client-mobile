@@ -11,23 +11,23 @@
       <div class="q-mt-lg text-white">
         <p style="font-size: medium">@{{ user.username }}</p>
         <span class="defaultfont-bold text-uppercase" style="font-size: large">
-          {{ user.name.firstname }} {{ user.name.middlename.charAt(0) }}.
-          {{ user.name.lastname }}
+          {{ user.firstname }} {{ user.middlename.charAt(0) }}.
+          {{ user.lastname }}
         </span>
         <div v-if="user.isStudent">
           <p style="font-size: smaller; line-height: 0.85rem">
             {{ user.studentID }} <br />
-            {{ user.course.degree }}, {{ user.course.yearAdmitted }} <br />
-            {{ user.course.department }} <br />
-            {{ user.course.college }}
+            {{ user.degree }}, {{ user.yearAdmitted }} <br />
+            {{ user.department }} <br />
+            {{ user.college }}
           </p>
         </div>
         <div v-else>
           <p style="font-size: smaller; line-height: 0.85rem">
             {{ user.housingName }} <br />
-            {{ user.address.addressLine1 }}, {{ user.address.addressLine2 }},
+            {{ user.addressLine1 }}, {{ user.addressLine2 }},
             <br />
-            {{ user.address.addressLine3 }}, {{ user.address.addressLine4 }}
+            {{ user.addressLine3 }}, {{ user.addressLine4 }}
           </p>
         </div>
       </div>
@@ -73,8 +73,8 @@
           <post v-for="post in posts" :key="post.date">
             <template #prfphoto><q-img :src="post.prfphoto" /></template>
             <template #fullname>
-              {{ post.name.firstname }} {{ post.name.middlename.charAt(0) }}.
-              {{ post.name.lastname }}
+              {{ post.firstname }} {{ post.middlename.charAt(0) }}.
+              {{ post.lastname }}
             </template>
             <template #housingName>{{ post.housingName }}</template>
             <template #date>{{ post.date }}</template>
@@ -113,33 +113,27 @@ export default class Home extends Vue {
   tab = ref("bookmarks/posts");
   posts!: PostInterface[];
   user = {
+    studentID: "201812730",
+    landlordID: "",
     username: "palawanexpress98",
     password: "password",
     isStudent: true,
-    studentID: "201812730",
-    landlordID: "",
-    name: {
-      firstname: "Nahed",
-      middlename: "Solaiman",
-      lastname: "Bashier",
-    },
+    firstname: "Nahed",
+    middlename: "Solaiman",
+    lastname: "Bashier",
     prfphoto: "https://cdn.quasar.dev/img/boy-avatar.png",
+    degree: "BS Information Technology (Database System)",
+    department: "Department of Information Sciences",
+    college: "College of Information and Computing Sciences",
+    yearAdmitted: 2018,
+    addressLine1: "0059 Disarip Street",
+    addressLine2: "Bubonga Marawi",
+    addressLine3: "Marawi City",
+    addressLine4: "Lanao del Sur",
+    housingName: "",
     email: "bashier.ns30@s.msumain.edu.ph",
     mobileNum: "09531409858",
     birthdate: "October 19, 1998",
-    course: {
-      degree: "BS Information Technology (Database System)",
-      department: "Department of Information Sciences",
-      college: "College of Information and Computing Sciences",
-      yearAdmitted: 2018,
-    },
-    address: {
-      addressLine1: "0059 Disarip Street",
-      addressLine2: "Bubonga Marawi",
-      addressLine3: "Marawi City",
-      addressLine4: "Lanao del Sur",
-    },
-    housingName: "",
   };
 }
 </script>

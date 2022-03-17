@@ -5,8 +5,8 @@
     <post v-for="post in posts" :key="post.date">
       <template #prfphoto><q-img :src="post.prfphoto" /></template>
       <template #fullname>
-        {{ post.name.firstname }} {{ post.name.middlename.charAt(0) }}.
-        {{ post.name.lastname }}
+        {{ post.firstname }} {{ post.middlename.charAt(0) }}.
+        {{ post.lastname }}
       </template>
       <template #housingName>{{ post.housingName }}</template>
       <template #date>{{ post.date }}</template>
