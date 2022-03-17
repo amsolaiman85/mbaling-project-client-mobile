@@ -37,21 +37,28 @@
 
     <!-- POST PICTURE -->
     <div class="q-my-xs">
-      <slot v-if="$route.fullPath.includes('/home')" name="photo" />
-      <q-carousel v-else-if="$route.fullPath.includes('/post')"
-          v-model="slide"
-          animated
-          infinite
-          navigation
-          arrows
-          transition-prev="slide-right"
-          transition-next="slide-left"
-          height="15rem"
-          autoplay="2"
-          control-color="white"
-        >
-          <slot name="carousel" />
-        </q-carousel>
+      <slot
+        v-if="
+          $route.fullPath.includes('/home') ||
+          $route.fullPath.includes('/account')
+        "
+        name="photo"
+      />
+      <q-carousel
+        v-else-if="$route.fullPath.includes('/post')"
+        v-model="slide"
+        animated
+        infinite
+        navigation
+        arrows
+        transition-prev="slide-right"
+        transition-next="slide-left"
+        height="15rem"
+        autoplay="2"
+        control-color="white"
+      >
+        <slot name="carousel" />
+      </q-carousel>
     </div>
 
     <!-- POST INFO -->
@@ -63,7 +70,12 @@
         <q-item-label style="font-size: small">
           <slot name="fee" /> PHP monthly
         </q-item-label>
-        <div v-if="$route.fullPath.includes('/home')">
+        <div
+          v-if="
+            $route.fullPath.includes('/home') ||
+            $route.fullPath.includes('/account')
+          "
+        >
           <span
             class="text-bold cursor-pointer"
             style="font-size: x-small; text-align: right"
@@ -126,7 +138,10 @@
       </span>
     </q-item>
     <q-separator
-      v-if="$route.fullPath.includes('/home')"
+      v-if="
+        $route.fullPath.includes('/home') ||
+        $route.fullPath.includes('/account')
+      "
       size="0.5rem"
       color="secondary"
     />
