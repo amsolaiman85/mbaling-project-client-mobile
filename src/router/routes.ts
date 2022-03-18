@@ -2,7 +2,8 @@ import { RouteRecordRaw } from "vue-router";
 
 const routes: RouteRecordRaw[] = [
   {
-    path: "", component: () => import("pages/LoginForm.vue"),
+    path: "",
+    component: () => import("pages/LoginForm.vue"),
   },
   {
     path: "/",

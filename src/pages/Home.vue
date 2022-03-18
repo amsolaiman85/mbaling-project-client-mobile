@@ -2,7 +2,7 @@
   <page-header />
   <q-page class="defaultfont bg-secondary">
     <!-- POST COMPONENT -->
-    <post v-for="post in posts" :key="post.date">
+    <post v-for="post in posts" :key="post.id">
       <template #prfphoto><q-img :src="post.prfphoto" /></template>
       <template #fullname>
         {{ post.firstname }} {{ post.middlename.charAt(0) }}.

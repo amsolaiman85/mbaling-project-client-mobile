@@ -1,45 +1,38 @@
 export interface PostInterface {
-  id: string;
-  date: number;
+  id?: number;
+  title: string;
+  fee: number;
+  description: string;
+  prvKitchen: boolean;
+  prvCR: boolean;
+  photos: {
+    id: number;
+    url: string;
+  }[];
+
   firstname: string;
   middlename: string;
   lastname: string;
   prfphoto: string;
   housingName: string;
-  title: string;
-  fee: number;
-  prvKitchen: boolean;
-  prvCR: boolean;
-  description: string;
-  photos: {
-    id: number;
-    url: string;
-  }[];
+
+  date: number;
   likes: number;
   bookmarks: number;
 }
 
 export interface PostStateInterface {
   posts: PostInterface[];
-  activePost?: PostInterface;
 }
 
 function state(): PostStateInterface {
   return {
     posts: [
       {
-        id: "zinboarding1631096539262",
-        date: 1631096539262,
-        firstname: "Azshara",
-        middlename: "Queldorei",
-        lastname: "Highborne",
-        prfphoto: "https://cdn.quasar.dev/img/avatar2.jpg",
-        housingName: "Zin-Azshari Boarding House",
+        id: 135413523,
         title:
           "Free boarding room @ Zin-Azshari Boarding House 5th street MSU-Marawi",
         fee: 1200,
-        prvKitchen: false,
-        prvCR: false,
         description: `Room dimension: 12x10ft
           Beds: 2 (single bed)
           rent fee is per person
@@ -53,6 +46,8 @@ function state(): PostStateInterface {
           -The management will not be liable of your stolen properties
           -No visitors allowed
           -Curfew is 9pm-5am`,
+        prvKitchen: false,
+        prvCR: false,
         photos: [
           {
             id: 1,
@@ -67,25 +62,27 @@ function state(): PostStateInterface {
             url: "https://cdn.quasar.dev/img/quasar.jpg",
           },
         ],
+
+        firstname: "Azshara",
+        middlename: "Queldorei",
+        lastname: "Highborne",
+        prfphoto: "https://cdn.quasar.dev/img/avatar2.jpg",
+        housingName: "Zin-Azshari Boarding House",
+
+        date: 1631096539262,
         likes: 44,
         bookmarks: 1,
       },
       {
-        id: "pirateking_home3499526422061",
-        date: 1632388510672,
-        firstname: "Monkey",
-        middlename: "Dante",
-        lastname: "Luffy",
-        prfphoto: "https://cdn.quasar.dev/img/avatar4.jpg",
-        housingName: "Pirate King Apartment",
+        id: 134134,
         title:
           "Family/Couple size Apartment room w/ Private kitchen and bathroom",
         fee: 6500,
-        prvKitchen: true,
-        prvCR: true,
         description: `Apartment for small family or couples.
           *with security camera surveillance
           *with private parking lot`,
+        prvKitchen: true,
+        prvCR: true,
         photos: [
           {
             id: 1,
@@ -96,6 +93,14 @@ function state(): PostStateInterface {
             url: "https://cdn.quasar.dev/img/mountains.jpg",
           },
         ],
+
+        firstname: "Monkey",
+        middlename: "Dante",
+        lastname: "Luffy",
+        prfphoto: "https://cdn.quasar.dev/img/avatar4.jpg",
+        housingName: "Pirate King Apartment",
+
+        date: 1632388510672,
         likes: 32,
         bookmarks: 4,
       },

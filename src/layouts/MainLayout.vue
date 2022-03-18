@@ -18,7 +18,7 @@
       <router-view />
     </q-page-container>
 
-    <q-footer class="bg-primary text-white">
+    <q-footer v-if="!$route.fullPath.includes('/post')" class="bg-primary text-white">
       <q-btn-group flat spread style="height: 3rem">
         <q-btn
           v-if="$route.fullPath.includes('/home')"
