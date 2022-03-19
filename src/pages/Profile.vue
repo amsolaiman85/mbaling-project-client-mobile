@@ -1,16 +1,25 @@
 <template>
-  <page-header>
-    <template #button-right>
+  <page-header style="background-color: primary">
+    <template #button-left>
       <q-btn
         icon="bi-arrow-left"
         :ripple="false"
         dense
         flat
-        color="black"
+        class="q-pl-sm"
         @click="$router.go(-1)"
       />
     </template>
+    <template #button-right>
+      <q-btn
+        icon="bi-envelope-fill"
+        :ripple="false"
+        flat
+        @click="$router.push('/chat')"
+      />
+    </template>
   </page-header>
+
   <q-page class="defaultfont bg-secondary text-black">
     <!-- PROFILE SECTION -->
     <div class="q-pa-md bg-primary flex-center text-center">
@@ -31,7 +40,7 @@
           <br />
           {{ user.addressLine3 }}, {{ user.addressLine4 }}
         </p>
-        <div class="q-my-md">
+        <!-- <div class="q-my-md">
           <q-btn
             :ripple="false"
             unelevated
@@ -40,10 +49,9 @@
             size="md"
             text-color="primary"
           >
-            <q-icon name="bi-envelope-fill" size="xs" class="q-mr-sm" />
-            SEND MESSAGE
+
           </q-btn>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -66,7 +74,12 @@
         <template #date> {{ post.date }} </template>
         <template #photo>
           <div v-for="photo in post.photos" :key="photo.id">
-            <q-img v-if="photo.id === 1" :src="photo.url" />
+            <q-img
+              v-if="photo.id === 1"
+              :src="photo.url"
+              fit="fill"
+              style="height: 15rem"
+            />
           </div>
         </template>
         <template #title> {{ post.title }} </template>

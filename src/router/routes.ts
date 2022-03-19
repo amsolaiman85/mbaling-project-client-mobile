@@ -11,10 +11,17 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: "home", component: () => import("pages/Home.vue") },
       { path: "account", component: () => import("pages/Account.vue") },
-      { path: "profile", component: () => import("pages/Profile.vue") },
       { path: "search", component: () => import("pages/Search.vue") },
       { path: "inbox", component: () => import("pages/inbox/Inbox.vue") },
       { path: "post", component: () => import("pages/post/Post.vue") },
+    ],
+  },
+  {
+    path: "/",
+    component: () => import("layouts/BlankLayout.vue"),
+    children: [
+      { path: "profile", component: () => import("pages/Profile.vue") },
+      { path: "settings", component: () => import("pages/setting/Settings.vue") },
     ],
   },
 

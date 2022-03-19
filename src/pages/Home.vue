@@ -20,7 +20,12 @@
       <template #date> {{ post.date }} </template>
       <template #photo>
         <div v-for="photo in post.photos" :key="photo.id">
-          <q-img v-if="photo.id === 1" :src="photo.url" />
+          <q-img
+            v-if="photo.id === 1"
+            :src="photo.url"
+            fit="fill"
+            style="height: 15rem"
+          />
         </div>
       </template>
       <template #title> {{ post.title }} </template>

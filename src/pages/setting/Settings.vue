@@ -1,23 +1,24 @@
 <template>
-  <q-header bordered style="height: 3rem; background-color: transparent">
-    <q-toolbar>
+  <page-header style="background-color: white">
+    <template #button-left>
       <q-btn
-        class="q-pl-sm"
-        color="black"
-        flat
         icon="bi-arrow-left"
         :ripple="false"
+        dense
+        flat
+        color="black"
+        class="q-pl-sm"
         @click="$router.go(-1)"
       />
-    </q-toolbar>
-  </q-header>
+    </template>
+  </page-header>
 
   <q-page class="defaultfont flex column">
     <q-list class="q-mx-sm">
       <template v-for="(menuItem, index) in menuList" :key="index">
-        <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple="false">
-          <q-item-section  style="max-width: 1.75rem">
-            <q-icon :name="menuItem.icon" size="xs"/>
+        <q-item clickable v-ripple="false">
+          <q-item-section style="max-width: 1.75rem">
+            <q-icon :name="menuItem.icon" size="xs" />
           </q-item-section>
           <q-item-section>
             {{ menuItem.label }}
@@ -38,41 +39,41 @@ import { Vue } from "vue-class-component";
 
 export default class MainLayout extends Vue {
   menuList = [
-  {
-    icon: "bi-person",
-    label: "Manage Account",
-    separator: false,
-  },
-  {
-    icon: "bi-shield-lock",
-    label: "Privacy",
-    separator: true,
-  },
-  {
-    icon: "bi-question-circle",
-    label: "Help Center",
-    separator: false,
-  },
-  {
-    icon: "bi-envelope",
-    label: "Feedback",
-    separator: true,
-  },
-  {
-    icon: "bi-journal-text",
-    label: "Terms of Service",
-    separator: false,
-  },
-  {
-    icon: "bi-file-earmark-lock",
-    label: "Privacy Policy",
-    separator: true,
-  },
-  {
-    icon: "bi-box-arrow-left",
-    label: "Logout",
-    separator: false,
-  },
-];
+    {
+      icon: "bi-person",
+      label: "Manage Account",
+      separator: false,
+    },
+    {
+      icon: "bi-shield-lock",
+      label: "Privacy",
+      separator: true,
+    },
+    {
+      icon: "bi-question-circle",
+      label: "Help Center",
+      separator: false,
+    },
+    {
+      icon: "bi-envelope",
+      label: "Feedback",
+      separator: true,
+    },
+    {
+      icon: "bi-journal-text",
+      label: "Terms of Service",
+      separator: false,
+    },
+    {
+      icon: "bi-file-earmark-lock",
+      label: "Privacy Policy",
+      separator: true,
+    },
+    {
+      icon: "bi-box-arrow-left",
+      label: "Logout",
+      separator: false,
+    },
+  ];
 }
 </script>
