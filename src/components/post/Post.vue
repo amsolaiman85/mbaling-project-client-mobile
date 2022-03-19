@@ -49,13 +49,7 @@
         <q-item-label style="font-size: small">
           <slot name="fee" /> PHP monthly
         </q-item-label>
-        <span
-          class="text-bold cursor-pointer"
-          style="font-size: x-small; text-align: right"
-          @click="$router.push('/post')"
-        >
-          +View more
-        </span>
+        <slot name="expand" />
       </q-item-section>
     </q-item>
     <q-separator inset color="primary" />
@@ -93,9 +87,7 @@
 </template>
 
 <script lang="ts">
-import { ref } from "vue";
 import { Vue } from "vue-class-component";
 
-export default class Home extends Vue {
-}
+export default class Post extends Vue {}
 </script>

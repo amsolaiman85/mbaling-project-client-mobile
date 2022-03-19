@@ -2,23 +2,40 @@
   <page-header />
   <q-page class="defaultfont bg-secondary">
     <!-- POST COMPONENT -->
-    <post v-for="post in posts" :key="post.id">
-      <template #prfphoto><q-img :src="post.prfphoto" /></template>
-      <template #fullname>
-        {{ post.firstname }} {{ post.middlename.charAt(0) }}.
-        {{ post.lastname }}
+    <post v-for="post in posts" :key="post.date">
+      <template #prfphoto>
+        <q-img :src="post.prfphoto" @click="$router.push('/profile')" />
       </template>
-      <template #housingName>{{ post.housingName }}</template>
-      <template #date>{{ post.date }}</template>
+      <template #fullname>
+        <span @click="$router.push('/profile')">
+          {{ post.firstname }} {{ post.middlename.charAt(0) }}.
+          {{ post.lastname }}
+        </span>
+      </template>
+      <template #housingName>
+        <span @click="$router.push('/profile')">
+          {{ post.housingName }}
+        </span>
+      </template>
+      <template #date> {{ post.date }} </template>
       <template #photo>
         <div v-for="photo in post.photos" :key="photo.id">
           <q-img v-if="photo.id === 1" :src="photo.url" />
         </div>
       </template>
-      <template #title>{{ post.title }}</template>
-      <template #fee>{{ post.fee }}</template>
-      <template #likes>{{ post.likes }}</template>
-      <template #bookmarks>{{ post.bookmarks }}</template>
+      <template #title> {{ post.title }} </template>
+      <template #fee> {{ post.fee }} </template>
+      <template #expand>
+        <span
+          class="text-bold cursor-pointer"
+          style="font-size: x-small; text-align: right"
+          @click="$router.push('/post')"
+        >
+          +View more
+        </span>
+      </template>
+      <template #likes> {{ post.likes }} </template>
+      <template #bookmarks> {{ post.bookmarks }} </template>
     </post>
 
     <!-- NO POSTS WARNING -->
@@ -46,9 +63,8 @@ import { mapState } from "vuex";
 @Options({
   computed: {
     ...mapState("posts", ["posts"]),
-  }
+  },
 })
-
 export default class Home extends Vue {
   posts!: PostInterface[];
 }

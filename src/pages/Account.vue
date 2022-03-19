@@ -1,5 +1,15 @@
 <template>
-  <page-header />
+  <page-header>
+    <template #button-right>
+      <q-btn
+        icon="bi-three-dots-vertical"
+        :ripple="false"
+        dense
+        flat
+        color="black"
+      />
+    </template>
+  </page-header>
   <q-page class="defaultfont bg-secondary text-black">
     <!-- PROFILE SECTION -->
     <div class="q-pa-md bg-primary flex-center text-center">
@@ -50,7 +60,7 @@
             class="row items-center"
             style="font-size: smaller"
           >
-            <q-icon name="bi-bookmark-fill" size="xxs" class="q-mr-xs" />
+            <q-icon name="bi-bookmark-fill" size="xs" class="q-mr-xs" />
             BOOKMARKS
           </span>
           <span v-else class="row items-center" style="font-size: smaller">
@@ -58,10 +68,14 @@
             POSTS
           </span>
         </q-tab>
-        <q-tab :ripple="false" name="associates">
+        <q-tab :ripple="false" name="activities">
           <span class="row items-center" style="font-size: smaller">
-            <q-icon name="bi-person-fill" size="xs" class="q-mr-xs" />
-            ASSOCIATES
+            <q-icon
+              name="bi-file-earmark-text-fill"
+              size="xs"
+              class="q-mr-xs"
+            />
+            ACTIVITIES
           </span>
         </q-tab>
       </q-tabs>
@@ -71,27 +85,44 @@
         <!-- BOOKMARK OR POST TAB PANEL -->
         <q-tab-panel name="bookmarks/posts">
           <post v-for="post in posts" :key="post.date">
-            <template #prfphoto><q-img :src="post.prfphoto" /></template>
-            <template #fullname>
-              {{ post.firstname }} {{ post.middlename.charAt(0) }}.
-              {{ post.lastname }}
+            <template #prfphoto>
+              <q-img :src="post.prfphoto" @click="$router.push('/profile')" />
             </template>
-            <template #housingName>{{ post.housingName }}</template>
-            <template #date>{{ post.date }}</template>
+            <template #fullname>
+              <span @click="$router.push('/profile')">
+                {{ post.firstname }} {{ post.middlename.charAt(0) }}.
+                {{ post.lastname }}
+              </span>
+            </template>
+            <template #housingName>
+              <span @click="$router.push('/profile')">
+                {{ post.housingName }}
+              </span>
+            </template>
+            <template #date> {{ post.date }} </template>
             <template #photo>
               <div v-for="photo in post.photos" :key="photo.id">
                 <q-img v-if="photo.id === 1" :src="photo.url" />
               </div>
             </template>
-            <template #title>{{ post.title }}</template>
-            <template #fee>{{ post.fee }}</template>
-            <template #likes>{{ post.likes }}</template>
-            <template #bookmarks>{{ post.bookmarks }}</template>
+            <template #title> {{ post.title }} </template>
+            <template #fee> {{ post.fee }} </template>
+            <template #expand>
+              <span
+                class="text-bold cursor-pointer"
+                style="font-size: x-small; text-align: right"
+                @click="$router.push('/post')"
+              >
+                +View more
+              </span>
+            </template>
+            <template #likes> {{ post.likes }} </template>
+            <template #bookmarks> {{ post.bookmarks }} </template>
           </post>
         </q-tab-panel>
 
         <!-- ASSOCIATE TAB PANEL -->
-        <q-tab-panel name="associates"> </q-tab-panel>
+        <q-tab-panel name="activities"> </q-tab-panel>
       </q-tab-panels>
     </div>
   </q-page>

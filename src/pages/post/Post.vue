@@ -1,8 +1,28 @@
 <template>
-  <page-header />
+  <page-header>
+    <template #button-right>
+      <q-btn
+        icon="bi-arrow-left"
+        :ripple="false"
+        dense
+        flat
+        color="black"
+        @click="$router.go(-1)"
+      />
+      <q-btn
+        icon="bi-three-dots"
+        :ripple="false"
+        dense
+        flat
+        color="black"
+        class="q-ml-sm"
+      />
+    </template>
+  </page-header>
+
   <q-page class="defaultfont text-black">
     <!-- POST PROFILE -->
-    <q-item class="q-pt-md">
+    <q-item class="q-pt-md" clickable>
       <q-item-section avatar top>
         <q-avatar size="xl">
           <img :src="posts.prfphoto" />
@@ -35,12 +55,34 @@
         arrows
         animated
         infinite
+        swipeable
         transition-prev="slide-right"
         transition-next="slide-left"
-        control-color="white"
-        height="17.5rem"
+        height="15rem"
         autoplay="2"
       >
+        <template v-slot:navigation-icon="{ active, onClick }">
+          <q-btn
+            v-if="active"
+            icon="bi-circle-fill"
+            flat
+            round
+            dense
+            size="xs"
+            color="primary"
+            @click="onClick"
+          />
+          <q-btn
+            v-else
+            icon="bi-circle"
+            flat
+            round
+            dense
+            size="xs"
+            color="white"
+            @click="onClick"
+          />
+        </template>
         <q-carousel-slide
           v-for="photo in posts.photos"
           :key="photo.id"
