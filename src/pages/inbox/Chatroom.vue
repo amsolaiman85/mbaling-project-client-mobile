@@ -1,12 +1,13 @@
 <template>
   <q-header elevated style="height: 3rem; background-color: white">
     <q-toolbar>
-      <q-avatar size="md" class="q-ml-sm">
+      <q-avatar size="sm" class="q-ml-sm" @click="$router.push('/profile')">
         <q-img src="https://cdn.quasar.dev/img/avatar2.jpg" />
       </q-avatar>
       <q-toolbar-title
         class="defaultfont text-black text-bold"
-        style="font-size: medium"
+        style="font-size: small"
+        @click="$router.push('/profile')"
       >
         Azshara Q. Highborne
       </q-toolbar-title>
@@ -76,103 +77,66 @@
   </q-page>
 </template>
 
-<script>
-// import { Ripple, useQuasar } from "quasar";
-// import { Vue } from "vue-class-component";
+<script lang="ts">
+import { useQuasar } from "quasar";
+import { Vue } from "vue-class-component";
 
-// export default class MainLayout extends Vue {
-//   newMessage = "";
-//       messages = [
-//         {
-//           text: "Hey Dodol, how r u boi",
-//           from: "me",
-//         },
-//         {
-//           text: "yow im fine boi",
-//           from: "them",
-//         },
-//         {
-//           text: "im just to chill",
-//           from: "me",
-//         },
-//       ];
-
-//       sendMessage() {
-//       this.messages.push({
-//         text: this.newMessage,
-//         from: "me",
-//       });
-//       this.newMessage = "";
-//     };
-// }
-
-import { Ripple, useQuasar } from "quasar";
-export default {
-  data() {
-    return {
-      newMessage: "",
-      messages: [
-        {
-          text: "Hey Dodol, how r u boi",
-          from: "me",
-        },
-        {
-          text: "yow im fine boi",
-          from: "them",
-        },
-        {
-          text: "im just to chill",
-          from: "me",
-        },
-      ],
-    };
-  },
-  methods: {
-    sendMessage() {
-      this.messages.push({
-        text: this.newMessage,
-        from: "me",
-      });
-      this.newMessage = "";
-    },
-  },
-  setup() {
-    const $q = useQuasar();
-    function show(grid) {
-      $q.bottomSheet({
-        Ripple,
+export default class MainLayout extends Vue {
+  $q = useQuasar();
+  show(grid: boolean) {
+    this.$q
+      .bottomSheet({
         message: "More",
         grid,
         actions: [
           {
             label: "Gallery",
             icon: "bi-image",
-            id: "drive",
           },
           {
             label: "Camera",
             icon: "bi-camera",
-            id: "camera",
           },
           {
             label: "Link",
             icon: "bi-door-closed",
-            id: "link",
           },
           {},
         ],
       })
-        .onOk((action) => {
-          // console.log('Action chosen:', action.id)
-        })
-        .onCancel(() => {
-          // console.log('Dismissed')
-        })
-        .onDismiss(() => {
-          // console.log('I am triggered on both OK and Cancel')
-        });
-    }
-    return { show };
-  },
-};
+      .onOk(() => {
+        // console.log('Action chosen:', action.id)
+      })
+      .onCancel(() => {
+        // console.log('Dismissed')
+      })
+      .onDismiss(() => {
+        // console.log('I am triggered on both OK and Cancel')
+      });
+  }
+
+  newMessage = "";
+  messages = [
+    {
+      text: "Hey Dodol, how r u boi",
+      from: "me",
+    },
+    {
+      text: "yow im fine boi",
+      from: "them",
+    },
+    {
+      text: "im just to chill",
+      from: "me",
+    },
+  ];
+
+  sendMessage() {
+    this.messages.push({
+      text: this.newMessage,
+      from: "me",
+    });
+    this.newMessage = "";
+  }
+}
 </script>
