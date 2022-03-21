@@ -21,7 +21,21 @@ const routes: RouteRecordRaw[] = [
     component: () => import("layouts/BlankLayout.vue"),
     children: [
       { path: "profile", component: () => import("pages/Profile.vue") },
-      { path: "settings", component: () => import("pages/setting/Settings.vue") },
+      { path: "form", component: () => import("pages/post/PostForm.vue") },
+      { path: "chat", component: () => import("pages/inbox/Chatroom.vue") },
+    ],
+  },
+  {
+    path: "/settings/",
+    component: () => import("layouts/SettingLayout.vue"),
+    children: [
+      { path: "", component: () => import("pages/setting/Settings.vue") },
+      { path: "account", component: () => import("pages/setting/ManageAccount.vue") },
+      { path: "privacy", component: () => import("pages/setting/ManagePrivacy.vue") },
+      { path: "help", component: () => import("pages/setting/HelpCenter.vue") },
+      { path: "feedback", component: () => import("pages/setting/Feedback.vue") },
+      { path: "terms-of-service", component: () => import("pages/setting/ServicePolicy.vue") },
+      { path: "privacy-policy", component: () => import("pages/setting/PrivacyPolicy.vue") },
     ],
   },
 

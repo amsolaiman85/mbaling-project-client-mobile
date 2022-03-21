@@ -1,5 +1,5 @@
 <template>
-  <page-header style="background-color: white">
+  <page-header>
     <template #button-left>
       <q-btn
         icon="bi-arrow-left"
@@ -11,21 +11,97 @@
         @click="$router.go(-1)"
       />
     </template>
+    <template #title> Settings and Privacy </template>
   </page-header>
 
   <q-page class="defaultfont flex column">
-    <q-list class="q-mx-sm">
-      <template v-for="(menuItem, index) in menuList" :key="index">
-        <q-item clickable v-ripple="false">
-          <q-item-section style="max-width: 1.75rem">
-            <q-icon :name="menuItem.icon" size="xs" />
-          </q-item-section>
-          <q-item-section>
-            {{ menuItem.label }}
-          </q-item-section>
-        </q-item>
-        <q-separator :key="'sep' + index" v-if="menuItem.separator" />
-      </template>
+    <q-list>
+      <div class="q-ml-md q-mt-md defaultfont-semibold text-grey">ACCOUNT</div>
+      <!-- MANAGE ACCOUNT -->
+      <q-item
+        clickable
+        v-ripple="false"
+        @click="$router.push('/settings/account')"
+      >
+        <q-item-section style="max-width: 1.75rem">
+          <q-icon name="bi-person" size="xs" />
+        </q-item-section>
+        <q-item-section> Manage Account </q-item-section>
+      </q-item>
+
+      <!-- MANAGE PRIVACY -->
+      <q-item
+        clickable
+        v-ripple="false"
+        @click="$router.push('/settings/privacy')"
+      >
+        <q-item-section style="max-width: 1.75rem">
+          <q-icon name="bi-shield-lock" size="xs" />
+        </q-item-section>
+        <q-item-section> Privacy </q-item-section>
+      </q-item>
+      <q-separator inset />
+
+      <div class="q-ml-md q-mt-md defaultfont-semibold text-grey">SUPPORT</div>
+      <!-- HELP CENTER -->
+      <q-item
+        clickable
+        v-ripple="false"
+        @click="$router.push('/settings/help')"
+      >
+        <q-item-section style="max-width: 1.75rem">
+          <q-icon name="bi-question-circle" size="xs" />
+        </q-item-section>
+        <q-item-section> Help Center </q-item-section>
+      </q-item>
+
+      <!-- FEEDBACK -->
+      <q-item
+        clickable
+        v-ripple="false"
+        @click="$router.push('/settings/feedback')"
+      >
+        <q-item-section style="max-width: 1.75rem">
+          <q-icon name="bi-envelope" size="xs" />
+        </q-item-section>
+        <q-item-section> Feedback </q-item-section>
+      </q-item>
+      <q-separator inset />
+
+      <div class="q-ml-md q-mt-md defaultfont-semibold text-grey">ABOUT</div>
+      <!-- TERMS OF SERVICE -->
+      <q-item
+        clickable
+        v-ripple="false"
+        @click="$router.push('/settings/terms-of-service')"
+      >
+        <q-item-section style="max-width: 1.75rem">
+          <q-icon name="bi-journal-text" size="xs" />
+        </q-item-section>
+        <q-item-section> Terms of Service </q-item-section>
+      </q-item>
+
+      <!-- PRIVACY POLICY -->
+      <q-item
+        clickable
+        v-ripple="false"
+        @click="$router.push('/settings/privacy-policy')"
+      >
+        <q-item-section style="max-width: 1.75rem">
+          <q-icon name="bi-file-earmark-lock" size="xs" />
+        </q-item-section>
+        <q-item-section> Privacy Policy </q-item-section>
+      </q-item>
+      <q-separator inset />
+
+      <div class="q-ml-md q-mt-md defaultfont-semibold text-grey">LOGIN</div>
+      <!-- SYSTEM LOG-OUT -->
+      <q-item clickable v-ripple="false">
+        <q-item-section style="max-width: 1.75rem">
+          <q-icon name="bi-box-arrow-left" size="xs" />
+        </q-item-section>
+        <q-item-section> Logout </q-item-section>
+      </q-item>
     </q-list>
   </q-page>
 
@@ -37,43 +113,5 @@
 <script lang="ts">
 import { Vue } from "vue-class-component";
 
-export default class MainLayout extends Vue {
-  menuList = [
-    {
-      icon: "bi-person",
-      label: "Manage Account",
-      separator: false,
-    },
-    {
-      icon: "bi-shield-lock",
-      label: "Privacy",
-      separator: true,
-    },
-    {
-      icon: "bi-question-circle",
-      label: "Help Center",
-      separator: false,
-    },
-    {
-      icon: "bi-envelope",
-      label: "Feedback",
-      separator: true,
-    },
-    {
-      icon: "bi-journal-text",
-      label: "Terms of Service",
-      separator: false,
-    },
-    {
-      icon: "bi-file-earmark-lock",
-      label: "Privacy Policy",
-      separator: true,
-    },
-    {
-      icon: "bi-box-arrow-left",
-      label: "Logout",
-      separator: false,
-    },
-  ];
-}
+export default class MainLayout extends Vue {}
 </script>

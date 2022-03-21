@@ -1,26 +1,21 @@
 <template>
-  <q-header style="height: 3rem; background-color: transparent">
+  <q-header elevated style="height: 3rem; background-color: white">
     <q-toolbar>
-      <q-avatar
-        v-if="$route.fullPath.includes('/chat')"
-        class="q-ml-sm"
-        size="md"
-      >
+      <q-avatar size="md" class="q-ml-sm">
         <q-img src="https://cdn.quasar.dev/img/avatar2.jpg" />
       </q-avatar>
       <q-toolbar-title
-        v-if="$route.fullPath.includes('/chat')"
         class="defaultfont text-black text-bold"
-        style="font-size: small"
+        style="font-size: medium"
       >
-        Azshara Highborne
+        Azshara Q. Highborne
       </q-toolbar-title>
       <q-btn
-        class="q-pr-sm"
-        color="black"
-        flat
         icon="bi-arrow-left"
         :ripple="false"
+        flat
+        color="black"
+        class="q-pr-sm"
         @click="$router.go(-1)"
       />
     </q-toolbar>
@@ -47,21 +42,20 @@
       <q-toolbar>
         <q-toolbar-title>
           <q-input
-            class="full-width"
-            bg-color="white"
+            v-model="newMessage"
+            dense
             rounded
             outlined
-            v-model="newMessage"
             placeholder="Message"
-            dense
+            bg-color="white"
+            class="full-width"
           >
             <template v-slot:append>
               <q-btn
-                class="q-pa-none"
-                flat
                 icon="send"
                 :disable="!newMessage"
-                name="send"
+                flat
+                class="q-pa-none"
                 @click="sendMessage"
               />
             </template>
@@ -83,6 +77,35 @@
 </template>
 
 <script>
+// import { Ripple, useQuasar } from "quasar";
+// import { Vue } from "vue-class-component";
+
+// export default class MainLayout extends Vue {
+//   newMessage = "";
+//       messages = [
+//         {
+//           text: "Hey Dodol, how r u boi",
+//           from: "me",
+//         },
+//         {
+//           text: "yow im fine boi",
+//           from: "them",
+//         },
+//         {
+//           text: "im just to chill",
+//           from: "me",
+//         },
+//       ];
+
+//       sendMessage() {
+//       this.messages.push({
+//         text: this.newMessage,
+//         from: "me",
+//       });
+//       this.newMessage = "";
+//     };
+// }
+
 import { Ripple, useQuasar } from "quasar";
 export default {
   data() {

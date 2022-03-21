@@ -25,7 +25,7 @@
     <q-item class="q-pt-md" clickable>
       <q-item-section avatar top>
         <q-avatar size="xl">
-          <img :src="posts.prfphoto" />
+          <img :src="posts.prfphoto" @click="$router.push('/profile')" />
         </q-avatar>
       </q-item-section>
 
@@ -34,11 +34,16 @@
           lines="1"
           class="defaultfont-semibold"
           style="font-size: medium"
+          @click="$router.push('/profile')"
         >
           {{ posts.firstname }} {{ posts.middlename.charAt(0) }}.
           {{ posts.lastname }}
         </q-item-label>
-        <q-item-label lines="1" style="font-size: small">
+        <q-item-label
+          lines="1"
+          style="font-size: small"
+          @click="$router.push('/profile')"
+        >
           {{ posts.housingName }}
         </q-item-label>
         <span class="text-grey" style="font-size: xx-small">

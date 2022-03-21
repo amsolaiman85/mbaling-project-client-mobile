@@ -4,7 +4,6 @@
       <q-btn
         icon="bi-arrow-left"
         :ripple="false"
-        dense
         flat
         class="q-pl-sm"
         @click="$router.go(-1)"

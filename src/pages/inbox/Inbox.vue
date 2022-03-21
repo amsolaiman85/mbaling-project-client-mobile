@@ -7,7 +7,7 @@
         :key="contact.username"
         class="bg-white"
       >
-        <q-item :v-ripple="false" clickable>
+        <q-item :v-ripple="false" clickable @click="$router.push('/chat')">
           <q-item-section avatar>
             <q-avatar size="lg">
               <img :src="contact.prfphoto" />

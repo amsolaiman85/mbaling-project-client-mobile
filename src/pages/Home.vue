@@ -23,7 +23,7 @@
           <q-img
             v-if="photo.id === 1"
             :src="photo.url"
-            fit="fill"
+            fit="cover"
             style="height: 15rem"
           />
         </div>
@@ -54,7 +54,7 @@
         icon="bi-pin-angle"
         fab
         color="primary"
-        @click="$router.push('/home')"
+        @click="$router.push('/form')"
       />
     </q-page-sticky>
   </q-page>
