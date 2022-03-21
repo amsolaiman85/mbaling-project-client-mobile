@@ -71,10 +71,11 @@ export default class LoginForm extends Vue {
       await this.$router.replace("/home");
     } else {
       this.$q.notify({
+        message: "Incorrect username or password.",
         color: "secondary",
         textColor: "primary",
         position: "top",
-        message: "Incorrect username or password.",
+        classes: "defaultfont",
       });
     }
   }
@@ -82,6 +83,7 @@ export default class LoginForm extends Vue {
     this.$q.dialog({
       message:
         "Please proceed to the MSU Housing Management Division to sign-up for an account.",
+      class: "defaultfont",
     });
   }
 }

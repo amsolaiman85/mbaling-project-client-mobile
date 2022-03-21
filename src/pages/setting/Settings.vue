@@ -8,7 +8,7 @@
         flat
         color="black"
         class="q-pl-sm"
-        @click="$router.push('/account')"
+        @click="$router.go(-1)"
       />
     </template>
     <template #title> Settings and Privacy </template>

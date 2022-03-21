@@ -67,7 +67,7 @@
                 dense
                 flat
                 icon="bi-plus-circle"
-                @click="show(true)"
+                @click="showOptions()"
               />
             </template>
           </q-input>
@@ -78,32 +78,30 @@
 </template>
 
 <script lang="ts">
-import { useQuasar } from "quasar";
+import { BottomSheet } from "quasar";
 import { Vue } from "vue-class-component";
 
 export default class MainLayout extends Vue {
-  $q = useQuasar();
-  show(grid: boolean) {
-    this.$q
-      .bottomSheet({
-        message: "More",
-        grid,
-        actions: [
-          {
-            label: "Gallery",
-            icon: "bi-image",
-          },
-          {
-            label: "Camera",
-            icon: "bi-camera",
-          },
-          {
-            label: "Link",
-            icon: "bi-door-closed",
-          },
-          {},
-        ],
-      })
+  showOptions() {
+    BottomSheet.create({
+      title: "More",
+      grid: true,
+      class: "q-pb-xl defaultfont",
+      actions: [
+        {
+          icon: "bi-image",
+          label: "Gallery",
+        },
+        {
+          icon: "bi-camera",
+          label: "Camera",
+        },
+        {
+          icon: "bi-door-closed",
+          label: "Link",
+        },
+      ],
+    })
       .onOk(() => {
         // console.log('Action chosen:', action.id)
       })
