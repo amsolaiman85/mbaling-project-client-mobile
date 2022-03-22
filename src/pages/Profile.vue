@@ -54,6 +54,7 @@
       </div>
     </div>
 
+    <!-- USER POST DISPLAY LIST -->
     <div class="q-mt-sm q-pa-md">
       <post v-for="post in posts" :key="post.date">
         <template #prfphoto>

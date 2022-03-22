@@ -16,6 +16,7 @@
 
   <q-page class="defaultfont">
     <div class="q-px-lg q-py-xl">
+      <!-- CONTENT SECTION CARD -->
       <q-card>
         <q-card-section class="content">
           {{ lorem }}
@@ -23,7 +24,7 @@
       </q-card>
     </div>
 
-    <!-- ADD POST BUTTON -->
+    <!-- BACK-TO-TOP BUTTON -->
     <q-page-scroller
       :scroll-offset="100"
       :offset="[18, 18]"

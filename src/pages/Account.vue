@@ -128,7 +128,7 @@
           </post>
         </q-tab-panel>
 
-        <!-- ASSOCIATE TAB PANEL -->
+        <!-- ACTIVITY TAB PANEL -->
         <q-tab-panel name="activities"> </q-tab-panel>
       </q-tab-panels>
     </div>

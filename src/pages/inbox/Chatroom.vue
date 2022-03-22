@@ -23,6 +23,7 @@
   </q-header>
 
   <q-page class="defaultfont bg-secondary flex column">
+    <!-- CHAT/MESSAGE AREA -->
     <q-scroll-area
       class="q-pa-md column col justify-end"
       style="height: 38rem; max-width: 100%"
@@ -119,10 +120,14 @@
         </q-input>
       </q-toolbar-title>
     </q-toolbar>
+
+    <!-- ADD MORE OPTIONS PANEL -->
     <q-slide-transition>
       <div v-show="showOptions" class="q-pa-md bg-secondary text-black">
         <p class="defaultfont-semibold text-subtitle1">More</p>
         <div class="q-pb-xl defaultfont row">
+
+          <!-- ADD FROM GALLERY BUTTON -->
           <div class="col flex flex-center text-center">
             <q-card
               flat
@@ -142,6 +147,8 @@
               </q-btn></q-card
             >
           </div>
+
+          <!-- ADD FROM CAMERA BUTTON -->
           <div class="flex flex-center col">
             <q-card
               flat
@@ -161,6 +168,8 @@
               </q-btn>
             </q-card>
           </div>
+
+          <!-- ADD FROM LINK BUTTON -->
           <div class="flex flex-center col">
             <q-card
               flat

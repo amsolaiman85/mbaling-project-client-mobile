@@ -1,6 +1,7 @@
 <template>
   <page-header />
   <q-page class="defaultfont bg-secondary text-black">
+    <!-- CONTACT/INBOX LIST -->
     <q-list class="q-pt-xs">
       <q-list
         v-for="contact in contacts"
@@ -27,6 +28,7 @@
             </q-item-label>
           </q-item-section>
 
+          <!-- OPTION BUTTON -->
           <q-item-section side>
             <q-btn
               icon="bi-three-dots-vertical"
