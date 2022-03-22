@@ -38,8 +38,9 @@
         />
       </div>
     </q-scroll-area>
+  </q-page>
 
-    <q-footer class="bg-white">
+  <!-- <q-footer class="bg-white">
       <q-toolbar>
         <q-toolbar-title>
           <q-input
@@ -73,45 +74,136 @@
           </q-input>
         </q-toolbar-title>
       </q-toolbar>
-    </q-footer>
-  </q-page>
+    </q-footer> -->
+
+  <q-footer class="defaultfont bg-white">
+    <q-toolbar>
+      <q-toolbar-title>
+        <q-input
+          v-model="newMessage"
+          dense
+          rounded
+          outlined
+          placeholder="Message"
+          bg-color="white"
+          class="full-width"
+        >
+          <template v-slot:append>
+            <q-btn
+              icon="send"
+              :disable="!newMessage"
+              flat
+              class="q-pa-none"
+              @click="sendMessage"
+            />
+          </template>
+
+          <template v-slot:after>
+            <q-btn
+              icon="bi-plus-circle"
+              v-on:click="showOptions = !showOptions"
+              v-if="!showOptions"
+              round
+              dense
+              flat
+            />
+            <q-btn
+              icon="bi-x-circle"
+              v-on:click="showOptions = !showOptions"
+              v-else
+              round
+              dense
+              flat
+            />
+          </template>
+        </q-input>
+      </q-toolbar-title>
+    </q-toolbar>
+    <q-slide-transition>
+      <div v-show="showOptions" class="q-pa-md bg-secondary text-black">
+        <p class="defaultfont-semibold text-subtitle1">More</p>
+        <div class="q-pb-xl defaultfont row">
+          <div class="col flex flex-center text-center">
+            <q-btn
+              icon="bi-image"
+              :ripple="false"
+              no-caps
+              stack
+              flat
+              size="xl"
+              class="q-pa-md text-body2"
+            >
+              <span class="q-pt-sm text-subtitle2">Gallery</span>
+            </q-btn>
+          </div>
+          <div class="flex flex-center col">
+            <q-btn
+              icon="bi-camera"
+              :ripple="false"
+              no-caps
+              stack
+              flat
+              size="xl"
+              class="q-pa-md text-body2"
+            >
+              <span class="q-pt-sm text-subtitle2">Camera</span>
+            </q-btn>
+          </div>
+          <div class="flex flex-center col">
+            <q-btn
+              icon="bi-door-closed"
+              :ripple="false"
+              no-caps
+              stack
+              flat
+              size="xl"
+              class="q-pa-md text-body2"
+            >
+              <span class="q-pt-sm text-subtitle2">Link</span>
+            </q-btn>
+          </div>
+        </div>
+      </div>
+    </q-slide-transition>
+  </q-footer>
 </template>
 
 <script lang="ts">
 import { BottomSheet } from "quasar";
 import { Vue } from "vue-class-component";
 
-export default class MainLayout extends Vue {
-  showOptions() {
-    BottomSheet.create({
-      title: "More",
-      grid: true,
-      class: "q-pb-xl defaultfont",
-      actions: [
-        {
-          icon: "bi-image",
-          label: "Gallery",
-        },
-        {
-          icon: "bi-camera",
-          label: "Camera",
-        },
-        {
-          icon: "bi-door-closed",
-          label: "Link",
-        },
-      ],
-    })
-      .onOk(() => {
-        // console.log('Action chosen:', action.id)
-      })
-      .onCancel(() => {
-        // console.log('Dismissed')
-      })
-      .onDismiss(() => {
-        // console.log('I am triggered on both OK and Cancel')
-      });
-  }
+export default class Chatroom extends Vue {
+  showOptions = false;
+  // showOptions() {
+  //   BottomSheet.create({
+  //     title: "More",
+  //     grid: true,
+  //     class: "q-pb-xl defaultfont",
+  //     actions: [
+  //       {
+  //         icon: "bi-image",
+  //         label: "Gallery",
+  //       },
+  //       {
+  //         icon: "bi-camera",
+  //         label: "Camera",
+  //       },
+  //       {
+  //         icon: "bi-door-closed",
+  //         label: "Link",
+  //       },
+  //     ],
+  //   })
+  //     .onOk(() => {
+  //       // console.log('Action chosen:', action.id)
+  //     })
+  //     .onCancel(() => {
+  //       // console.log('Dismissed')
+  //     })
+  //     .onDismiss(() => {
+  //       // console.log('I am triggered on both OK and Cancel')
+  //     });
+  // }
 
   newMessage = "";
   messages = [
