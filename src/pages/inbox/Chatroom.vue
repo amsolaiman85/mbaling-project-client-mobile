@@ -1,13 +1,12 @@
 <template>
   <q-header elevated style="height: 3rem; background-color: white">
     <q-toolbar>
-      <q-avatar size="sm" class="q-ml-sm" @click="$router.push('/profile')">
+      <q-avatar size="md" class="q-ml-sm">
         <q-img src="https://cdn.quasar.dev/img/avatar2.jpg" />
       </q-avatar>
       <q-toolbar-title
         class="defaultfont text-black text-bold"
         style="font-size: small"
-        @click="$router.push('/profile')"
       >
         Azshara Q. Highborne
       </q-toolbar-title>
@@ -171,7 +170,7 @@
 
           <!-- ADD FROM LINK BUTTON -->
           <div class="flex flex-center col">
-            <q-card
+            <!-- <q-card
               flat
               class="flex flex-center"
               style="height: 6rem; width: 6rem"
@@ -187,7 +186,7 @@
               >
                 <span class="q-pt-sm text-subtitle2">Link</span>
               </q-btn>
-            </q-card>
+            </q-card> -->
           </div>
         </div>
       </div>
