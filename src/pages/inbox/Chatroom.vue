@@ -124,43 +124,61 @@
         <p class="defaultfont-semibold text-subtitle1">More</p>
         <div class="q-pb-xl defaultfont row">
           <div class="col flex flex-center text-center">
-            <q-btn
-              icon="bi-image"
-              :ripple="false"
-              no-caps
-              stack
+            <q-card
               flat
-              size="xl"
-              class="q-pa-md text-body2"
+              class="flex flex-center"
+              style="height: 6rem; width: 6rem"
             >
-              <span class="q-pt-sm text-subtitle2">Gallery</span>
-            </q-btn>
+              <q-btn
+                icon="bi-image"
+                :ripple="false"
+                no-caps
+                stack
+                flat
+                size="xl"
+                class="q-pa-md text-body2"
+              >
+                <span class="q-pt-sm text-subtitle2">Gallery</span>
+              </q-btn></q-card
+            >
           </div>
           <div class="flex flex-center col">
-            <q-btn
-              icon="bi-camera"
-              :ripple="false"
-              no-caps
-              stack
+            <q-card
               flat
-              size="xl"
-              class="q-pa-md text-body2"
+              class="flex flex-center"
+              style="height: 6rem; width: 6rem"
             >
-              <span class="q-pt-sm text-subtitle2">Camera</span>
-            </q-btn>
+              <q-btn
+                icon="bi-camera"
+                :ripple="false"
+                no-caps
+                stack
+                flat
+                size="xl"
+                class="q-pa-md text-body2"
+              >
+                <span class="q-pt-sm text-subtitle2">Camera</span>
+              </q-btn>
+            </q-card>
           </div>
           <div class="flex flex-center col">
-            <q-btn
-              icon="bi-door-closed"
-              :ripple="false"
-              no-caps
-              stack
+            <q-card
               flat
-              size="xl"
-              class="q-pa-md text-body2"
+              class="flex flex-center"
+              style="height: 6rem; width: 6rem"
             >
-              <span class="q-pt-sm text-subtitle2">Link</span>
-            </q-btn>
+              <q-btn
+                icon="bi-door-closed"
+                :ripple="false"
+                no-caps
+                stack
+                flat
+                size="xl"
+                class="q-pa-md text-body2"
+              >
+                <span class="q-pt-sm text-subtitle2">Link</span>
+              </q-btn>
+            </q-card>
           </div>
         </div>
       </div>
