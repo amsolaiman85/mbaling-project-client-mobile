@@ -28,7 +28,6 @@
         </span>
         <div v-if="user.isStudent">
           <p style="font-size: smaller; line-height: 0.85rem">
-            {{ user.studentID }} <br />
             {{ user.degree }}, {{ user.yearAdmitted }} <br />
             {{ user.department }} <br />
             {{ user.college }}
@@ -151,27 +150,31 @@ export default class Home extends Vue {
   tab = ref("bookmarks/posts");
   posts!: PostInterface[];
   user = {
-    studentID: "201812730",
-    landlordID: "",
+    id: 201812730,
     username: "palawanexpress98",
     password: "password",
     isStudent: true,
+
     firstname: "Nahed",
     middlename: "Solaiman",
     lastname: "Bashier",
     prfphoto: "https://cdn.quasar.dev/img/boy-avatar.png",
+
     degree: "BS Information Technology (Database System)",
     department: "Department of Information Sciences",
     college: "College of Information and Computing Sciences",
     yearAdmitted: 2018,
+
     addressLine1: "0059 Disarip Street",
     addressLine2: "Bubonga Marawi",
     addressLine3: "Marawi City",
     addressLine4: "Lanao del Sur",
     housingName: "",
-    email: "bashier.ns30@s.msumain.edu.ph",
-    mobileNum: "09531409858",
+
     birthdate: "October 19, 1998",
+    gender: "Male",
+    contact: "09531409858",
+    email: "bashier.ns30@s.msumain.edu.ph",
   };
 }
 </script>

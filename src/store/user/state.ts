@@ -2,7 +2,7 @@ export interface UserInterface {
   id?: number;
   username: string;
   password: string;
-  type: "student" | "landlord";
+  isStudent: boolean;
 
   firstname: string;
   middlename: string;
@@ -27,17 +27,17 @@ export interface UserInterface {
 }
 
 export interface UserStateInterface {
-  user: UserInterface;
+  activeUser: UserInterface;
   users: UserInterface[];
 }
 
 function state(): UserStateInterface {
   return {
-    user: {
+    activeUser: {
       id: 201812730,
       username: "palawanexpress98",
       password: "password",
-      type: "student",
+      isStudent: true,
 
       firstname: "Nahed",
       middlename: "Solaiman",
@@ -65,7 +65,7 @@ function state(): UserStateInterface {
         id: 201812730,
         username: "palawanexpress98",
         password: "password",
-        type: "student",
+        isStudent: true,
 
         firstname: "Nahed",
         middlename: "Solaiman",
@@ -92,7 +92,7 @@ function state(): UserStateInterface {
         id: 20220001,
         username: "zinboarding",
         password: "password",
-        type: "landlord",
+        isStudent: false,
 
         firstname: "Azshara",
         middlename: "Queldorei",

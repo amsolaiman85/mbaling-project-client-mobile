@@ -108,7 +108,7 @@ export default class Home extends Vue {
     id: 20220001,
     username: "zinboarding",
     password: "password",
-    type: "landlord",
+    isStudent: false,
 
     firstname: "Azshara",
     middlename: "Queldorei",
