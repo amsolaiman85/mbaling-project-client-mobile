@@ -122,15 +122,15 @@
 
     <!-- ADD MORE OPTIONS PANEL -->
     <q-slide-transition>
-      <div v-show="showOptions" class="q-pa-md bg-secondary text-black">
-        <p class="defaultfont-semibold text-subtitle1">More</p>
+      <div v-show="showOptions" class="q-pa-md bg-white text-black">
+        <p class="defaultfont-semibold text-subtitle1 text-primary">More</p>
         <div class="q-pb-xl defaultfont row">
 
           <!-- ADD FROM GALLERY BUTTON -->
           <div class="col flex flex-center text-center">
             <q-card
               flat
-              class="flex flex-center"
+              class="bg-primary flex flex-center"
               style="height: 6rem; width: 6rem"
             >
               <q-btn
@@ -140,7 +140,7 @@
                 stack
                 flat
                 size="xl"
-                class="q-pa-md text-body2"
+                class="q-pa-md text-body2 text-white"
               >
                 <span class="q-pt-sm text-subtitle2">Gallery</span>
               </q-btn></q-card
@@ -151,7 +151,7 @@
           <div class="flex flex-center col">
             <q-card
               flat
-              class="flex flex-center"
+              class="bg-primary flex flex-center"
               style="height: 6rem; width: 6rem"
             >
               <q-btn
@@ -161,7 +161,7 @@
                 stack
                 flat
                 size="xl"
-                class="q-pa-md text-body2"
+                class="q-pa-md text-body2 text-white"
               >
                 <span class="q-pt-sm text-subtitle2">Camera</span>
               </q-btn>
@@ -172,7 +172,7 @@
           <div class="flex flex-center col">
             <!-- <q-card
               flat
-              class="flex flex-center"
+              class="bg-primary flex flex-center"
               style="height: 6rem; width: 6rem"
             >
               <q-btn
@@ -182,7 +182,7 @@
                 stack
                 flat
                 size="xl"
-                class="q-pa-md text-body2"
+                class="q-pa-md text-body2 text-white"
               >
                 <span class="q-pt-sm text-subtitle2">Link</span>
               </q-btn>

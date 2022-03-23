@@ -27,7 +27,7 @@
     <!-- BACK-TO-TOP BUTTON -->
     <q-page-scroller
       :scroll-offset="100"
-      :offset="[18, 18]"
+      :offset="[18, 32]"
       position="bottom-right"
     >
       <q-btn icon="bi-arrow-bar-up" fab color="primary" />
