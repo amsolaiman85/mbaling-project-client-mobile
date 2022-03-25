@@ -106,7 +106,7 @@
                 <q-img
                   v-if="photo.id === 1"
                   :src="photo.url"
-                  fit="fill"
+                  fit="cover"
                   style="height: 15rem"
                 />
               </div>

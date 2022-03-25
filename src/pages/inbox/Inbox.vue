@@ -8,14 +8,14 @@
         :key="contact.username"
         class="bg-white"
       >
-        <q-item :v-ripple="false" clickable @click="$router.push('/chat')">
-          <q-item-section avatar>
+        <q-item :v-ripple="false" clickable>
+          <q-item-section avatar @click="$router.push('/chat')">
             <q-avatar size="lg">
               <img :src="contact.prfphoto" />
             </q-avatar>
           </q-item-section>
 
-          <q-item-section>
+          <q-item-section @click="$router.push('/chat')">
             <q-item-label
               lines="1"
               class="defaultfont-semibold"
@@ -31,12 +31,13 @@
           <!-- OPTION BUTTON -->
           <q-item-section side>
             <q-btn
-              icon="bi-three-dots-vertical"
+              icon="bi-trash"
               :ripple="false"
               dense
               flat
               size="sm"
               class="text-black"
+              @click="confirmDelete()"
             />
           </q-item-section>
         </q-item>
@@ -76,5 +77,15 @@ export default class Search extends Vue {
       prfphoto: "https://cdn.quasar.dev/img/avatar4.jpg",
     },
   ];
+
+  confirmDelete() {
+    this.$q.dialog({
+      title: "Confirm Delete",
+      message: "Are you sure you want to delete this conversation?",
+      cancel: true,
+      persistent: true,
+      class: "defaultfont",
+    });
+  }
 }
 </script>
