@@ -15,7 +15,8 @@
   </page-header>
 
   <q-page class="defaultfont">
-    <div class="q-px-lg q-py-xl">
+    <p class="q-pt-xl defaultfont-semibold flex flex-center" style="font-size: x-large">Legal</p>
+    <div class="q-px-lg q-pb-xl">
       <!-- CONTENT SECTION CARD -->
       <q-card>
         <q-card-section class="content">

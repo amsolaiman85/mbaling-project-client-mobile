@@ -36,7 +36,7 @@
               dense
               flat
               size="sm"
-              class="text-black"
+              color="primary"
               @click="confirmDelete()"
             />
           </q-item-section>
