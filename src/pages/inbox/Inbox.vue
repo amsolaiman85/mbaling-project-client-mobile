@@ -50,7 +50,7 @@
 <script>
 import { Vue } from "vue-class-component";
 
-export default class Search extends Vue {
+export default class Inbox extends Vue {
   contacts = [
     {
       username: 1,

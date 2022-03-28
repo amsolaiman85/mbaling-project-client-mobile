@@ -2,6 +2,7 @@ import { boot } from 'quasar/wrappers'
 
 const components = {
   'post': require('components/post/Post').default,
+  'post-options': require('components/post/PostOptions').default,
   'post-card': require('components/post/PostCard').default,
   'page-header': require('components/PageHeader').default
 }

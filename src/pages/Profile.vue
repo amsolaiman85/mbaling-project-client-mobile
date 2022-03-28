@@ -103,7 +103,7 @@
 <script lang="ts">
 import { Vue } from "vue-class-component";
 
-export default class Home extends Vue {
+export default class Profile extends Vue {
   user = {
     id: 20220001,
     username: "zinboarding",

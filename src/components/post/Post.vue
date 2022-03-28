@@ -25,13 +25,7 @@
       </q-item-section>
 
       <q-item-section side top>
-        <q-btn
-          icon="bi-three-dots"
-          :ripple="false"
-          dense
-          flat
-          class="text-black"
-        />
+        <post-options></post-options>
       </q-item-section>
     </q-item>
 

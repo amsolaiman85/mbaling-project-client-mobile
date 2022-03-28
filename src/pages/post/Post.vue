@@ -181,7 +181,7 @@
 import { ref } from "vue";
 import { Vue } from "vue-class-component";
 
-export default class Home extends Vue {
+export default class Post extends Vue {
   slide = ref("style");
   posts = {
     id: 135413523,

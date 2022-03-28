@@ -2,7 +2,7 @@
   <page-header>
     <template #button-right>
       <q-btn
-        icon="bi-three-dots-vertical"
+        icon="bi-list"
         :ripple="false"
         dense
         flat
@@ -146,7 +146,7 @@ import { UserInterface } from "src/store/user/state";
     ...mapState("posts", ["posts"]),
   },
 })
-export default class Home extends Vue {
+export default class Account extends Vue {
   tab = ref("bookmarks/posts");
   posts!: PostInterface[];
   user = {
