@@ -143,7 +143,7 @@ import { UserInterface } from "src/store/user/state";
 
 @Options({
   computed: {
-    ...mapState("posts", ["posts"]),
+    ...mapState("posts", ["posts", "activeUser"]),
   },
 })
 export default class Account extends Vue {

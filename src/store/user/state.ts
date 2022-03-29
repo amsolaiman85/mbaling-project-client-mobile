@@ -21,7 +21,7 @@ export interface UserInterface {
   housingName: string;
 
   birthdate?: string;
-  gender?: string;
+  gender?: "Male" | "Female";
   contact?: string;
   email?: string;
 }

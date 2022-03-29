@@ -9,14 +9,7 @@
         color="black"
         @click="$router.go(-1)"
       />
-      <q-btn
-        icon="bi-three-dots"
-        :ripple="false"
-        dense
-        flat
-        color="black"
-        class="q-ml-sm"
-      />
+      <post-options class="q-ml-sm" />
     </template>
   </page-header>
 
@@ -139,41 +132,25 @@
     <q-item class="bg-transparent" style="height: 3.5rem" />
   </q-page>
 
-  <!-- REACT BUTTONS & STATS (FOOTER) -->
-  <q-footer class="defaultfont text-black">
-    <q-item class="fixed-bottom bg-white" style="height: 3.5rem">
+  <!-- POST ACTION BUTTONS (FOOTER) -->
+  <q-footer class="defaultfont">
+    <div class="fixed-bottom bg-white" style="height: 3.5rem">
       <q-separator
         inset
         color="primary"
         class="fixed-bottom"
         style="bottom: 3rem"
       />
-      <div class="q-mt-sm row">
+      <q-card-actions align="center" class="text-primary">
         <q-btn
-          icon="bi-heart"
+          label="Chat"
           :ripple="false"
           flat
-          round
-          color="primary"
-          size="sm"
+          class="q-mt-xs"
+          @click="$router.push('/chat')"
         />
-        <q-btn
-          icon="bi-chat-right"
-          :ripple="false"
-          flat
-          round
-          color="primary"
-          size="sm"
-        />
-      </div>
-      <q-space />
-      <span
-        class="q-pr-md q-pb-md defaultfont-medium absolute-bottom-right"
-        style="font-size: x-small"
-      >
-        {{ posts.likes }} Likes • {{ posts.bookmarks }} Bookmarks
-      </span>
-    </q-item>
+      </q-card-actions>
+    </div>
   </q-footer>
 </template>
 

@@ -43,39 +43,27 @@
         <q-item-label style="font-size: small">
           <slot name="fee" /> PHP monthly
         </q-item-label>
-        <slot name="expand" />
       </q-item-section>
     </q-item>
     <q-separator inset color="primary" />
 
-    <!-- REACT BUTTONS & STATS -->
-    <q-item>
-      <div class="row">
-        <q-btn
-          icon="bi-heart"
-          :ripple="false"
-          flat
-          round
-          color="primary"
-          size="sm"
-        />
-        <q-btn
-          icon="bi-chat-right"
-          :ripple="false"
-          flat
-          round
-          color="primary"
-          size="sm"
-        />
-      </div>
-      <q-space />
-      <span
-        class="q-pr-md q-pb-md defaultfont-medium absolute-bottom-right"
-        style="font-size: x-small"
-      >
-        <slot name="likes" /> Likes • <slot name="bookmarks" /> Bookmarks
-      </span>
-    </q-item>
+    <!-- POST ACTION BUTTONS -->
+    <q-card-actions align="evenly" class="text-primary">
+      <q-btn
+        label="Chat"
+        :ripple="false"
+        dense
+        flat
+        @click="$router.push('/chat')"
+      />
+      <q-btn
+        label="Expand"
+        :ripple="false"
+        dense
+        flat
+        @click="$router.push('/post')"
+      />
+    </q-card-actions>
     <q-separator size="0.5rem" color="secondary" />
   </q-list>
 </template>

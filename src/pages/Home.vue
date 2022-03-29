@@ -30,17 +30,6 @@
       </template>
       <template #title> {{ post.title }} </template>
       <template #fee> {{ post.fee }} </template>
-      <template #expand>
-        <span
-          class="text-bold cursor-pointer"
-          style="font-size: x-small; text-align: right"
-          @click="$router.push('/post')"
-        >
-          +View more
-        </span>
-      </template>
-      <template #likes> {{ post.likes }} </template>
-      <template #bookmarks> {{ post.bookmarks }} </template>
     </post>
 
     <!-- NO POSTS WARNING -->

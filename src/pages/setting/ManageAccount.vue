@@ -91,6 +91,16 @@
           </q-item-label>
         </q-item-section>
       </q-item>
+
+      <!-- EDIT BIRTHDATE -->
+      <q-item clickable v-ripple="false" @click="$router.push('')">
+        <q-item-section> Gender </q-item-section>
+        <q-item-section side style="width: 40%">
+          <q-item-label lines="1" class="text-grey">
+            Male
+          </q-item-label>
+        </q-item-section>
+      </q-item>
       <q-separator inset />
 
       <div class="q-ml-md q-mt-md defaultfont-semibold text-grey">
@@ -102,6 +112,16 @@
         <q-item-section side style="width: 40%">
           <q-item-label lines="1" class="text-grey">
             Zin-Azshari Boarding House
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <!-- SEND VERIFICATION OF HOUSING ADDRESS -->
+      <q-item clickable v-ripple="false" @click="$router.push('')">
+        <q-item-section> Verification </q-item-section>
+        <q-item-section side style="width: 40%">
+          <q-item-label lines="1" class="text-grey">
+            Not verified
           </q-item-label>
         </q-item-section>
       </q-item>

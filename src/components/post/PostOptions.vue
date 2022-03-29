@@ -23,10 +23,6 @@ export default class PostOptions extends Vue {
             label: "Add to Bookmarks",
             icon: "bi-bookmark"
           },
-          {
-            label: "Hide post",
-            icon: "bi-eye-slash"
-          },
           {},
           {
             label: "Report post",
